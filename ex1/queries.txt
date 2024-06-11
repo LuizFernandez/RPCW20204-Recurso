@@ -1,0 +1,51 @@
++-----------------------------------------------------------+
+| Query 1  (Quantas línguas fala o Eduardo?)                |
+|                                                           |
+| PREFIX : <http://rpcw.di.uminho.pt/2024/linguas/>         |
+| SELECT (COUNT(?ling) as ?nLing) WHERE {                   |
+|     ?est a :Estudante;                                    |  
+|          :nome "Eduardo";                                 |
+|          :fluente ?l.                                     |
+|    	?l :lingua ?ling.                                   |
+| }                                                         |
++-----------------------------------------------------------+
+| Query 2  (Quem se inscreveu no curso de alemão?)          |
+|                                                           |
+| PREFIX : <http://rpcw.di.uminho.pt/2024/linguas/>         |
+| SELECT ?nome WHERE {                                      |
+|     ?c a :Curso;                                          |
+|        :curso "Curso de Alemão".                          |
+|                                                           |
+|     ?est :inscritoEm ?c;                                  |
+|          :nome ?nome.                                     |
+| }                                                         |
++-----------------------------------------------------------+
+| Query 3                                                   |
+|                                                           |
+| PREFIX owl: <http://www.w3.org/2002/07/owl#>              |
+| SELECT (COUNT(?ind) as ?nInd) WHERE {                     |
+| 	?ind a owl:NamedIndividual.                             |
+| }                                                         |
++-----------------------------------------------------------+
+| Query 4                                                   |
+|                                                           |
+| PREFIX : <http://rpcw.di.uminho.pt/2024/linguas/>         |
+| SELECT ?ling1 ?ling2 ?curso ?per ?uni1 WHERE {            |
+|     ?ind :nome "Hanna";                                   |
+|          :fluente ?l1;                                    |
+|          :aprende ?l2;                                    |
+|          :inscritoEm ?c1;                                 |
+|          :conhece ?p;                                     |
+|          :estudaNa ?u1.                                   |
+|                                                           |
+|     ?l1 :lingua ?ling1.                                   |
+|     ?l2 :lingua ?ling2.                                   |
+|                                                           |
+|     ?c1 :curso ?curso.                                    |
+|                                                           |
+|     ?u1 :universidade ?uni1.                              |
+|                                                           |
+|     ?p :nome ?per                                         |
+| }                                                         |
++-----------------------------------------------------------+
+

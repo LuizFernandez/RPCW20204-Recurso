@@ -1,0 +1,45 @@
+Class:
+- Pessoa
+    - Estudante
+    - Professor
+- Lingua
+- Curso
+- Universidade
+
+Data Properties:
+
+- Pessoa
+    - id_pessoa
+    - nome
+
+- Lingua
+    - id_lingua
+    - lingua
+
+- Curso
+    - id_curso
+    - curso
+
+- Universidade
+    - id_universidade
+    - universidade
+
+Object Properties:
+
+- Professor -> Estuante
+    - professor
+- Estudante -> Lingua
+    - aprende
+    - fluente
+- Professor -> Lingua
+    - ensina
+- Estudante -> Curso
+    - inscritoEm
+- Professor -> Curso
+    - lecionaEm
+- Estudante -> Universidade
+    - estudaNa
+- Professor -> Universidade
+    - trabalhaNa
+- Pessoa -> Pessoa
+    - conhece

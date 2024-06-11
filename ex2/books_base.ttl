@@ -1,0 +1,251 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/livros/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/livros/> .
+
+<http://rpcw.di.uminho.pt/2024/livros> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/livros#classificadoComo
+:classificadoComo rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Livro ;
+                  rdfs:range :Genre .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#escreveu
+:escreveu rdf:type owl:ObjectProperty ;
+          rdfs:domain :Autor ;
+          rdfs:range :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#escritoEm
+:escritoEm rdf:type owl:ObjectProperty ;
+           rdfs:domain :Livro ;
+           rdfs:range :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#formato
+:formato rdf:type owl:ObjectProperty ;
+         rdfs:domain :Livro ;
+         rdfs:range :FormatoLivro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#pertencemA
+:pertencemA rdf:type owl:ObjectProperty ;
+            rdfs:domain :Personagem ;
+            rdfs:range :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#publicadoPor
+:publicadoPor rdf:type owl:ObjectProperty ;
+              rdfs:domain :Livro ;
+              rdfs:range :Publicador .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#recebeu
+:recebeu rdf:type owl:ObjectProperty ;
+         rdfs:domain :Livro ;
+         rdfs:range :Prémios .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/livros#bbeScore
+:bbeScore rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#bbeVotes
+:bbeVotes rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#bookId
+:bookId rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#coverImg
+:coverImg rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#edition
+:edition rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#firstPublishDate
+:firstPublishDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#formatoLivro
+:formatoLivro rdf:type owl:DatatypeProperty ;
+              rdfs:domain :FormatoLivro .
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_autor
+:id_autor rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Autor .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_awards
+:id_awards rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Prémios .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_format
+:id_format rdf:type owl:DatatypeProperty ;
+           rdfs:domain :FormatoLivro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_genre
+:id_genre rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Genre .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_lingua
+:id_lingua rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_personagem
+:id_personagem rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Personagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#id_publisher
+:id_publisher rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Publicador .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#isbn
+:isbn rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#likedPercent
+:likedPercent rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#lingua
+:lingua rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#nome_autor
+:nome_autor rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Autor .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#nome_personagem
+:nome_personagem rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Personagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#numRatings
+:numRatings rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#pages
+:pages rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#premio
+:premio rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Prémios .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#price
+:price rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#publicador
+:publicador rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Publicador .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#publishDate
+:publishDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#ratingsByStars
+:ratingsByStars rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#series
+:series rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#setting
+:setting rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Livro .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Livro .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/livros#Autor
+:Autor rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#FormatoLivro
+:FormatoLivro rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#Lingua
+:Lingua rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#Livro
+:Livro rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#Personagem
+:Personagem rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#Prémios
+:Prémios rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/livros#Publicador
+:Publicador rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

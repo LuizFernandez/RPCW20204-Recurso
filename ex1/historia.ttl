@@ -1,0 +1,263 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/linguas/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/linguas/> .
+
+<http://rpcw.di.uminho.pt/2024/linguas> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/linguas#aprende
+:aprende rdf:type owl:ObjectProperty ;
+         rdfs:domain :Estudante ;
+         rdfs:range :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#conhece
+:conhece rdf:type owl:ObjectProperty ;
+         rdfs:domain :Pessoa ;
+         rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#ensina
+:ensina rdf:type owl:ObjectProperty ;
+        rdfs:domain :Professor ;
+        rdfs:range :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#estudaNa
+:estudaNa rdf:type owl:ObjectProperty ;
+          rdfs:domain :Estudante ;
+          rdfs:range :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#fluente
+:fluente rdf:type owl:ObjectProperty ;
+         rdfs:domain :Estudante ;
+         rdfs:range :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#inscritoEm
+:inscritoEm rdf:type owl:ObjectProperty ;
+            rdfs:domain :Estudante ;
+            rdfs:range :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#lecionaEm
+:lecionaEm rdf:type owl:ObjectProperty ;
+           rdfs:domain :Professor ;
+           rdfs:range :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#professorDe
+:professorDe rdf:type owl:ObjectProperty ;
+             rdfs:domain :Professor ;
+             rdfs:range :Estudante .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#trabalhaNa
+:trabalhaNa rdf:type owl:ObjectProperty ;
+            rdfs:domain :Professor ;
+            rdfs:range :Universidade .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/linguas#curso
+:curso rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#id_curso
+:id_curso rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#id_lingua
+:id_lingua rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#id_pessoa
+:id_pessoa rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#id_universidade
+:id_universidade rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#lingua
+:lingua rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Lingua .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#universidade
+:universidade rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Universidade .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/linguas#Curso
+:Curso rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#Estudante
+:Estudante rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#Lingua
+:Lingua rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#Professor
+:Professor rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#Universidade
+:Universidade rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/linguas#cr1
+:cr1 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :curso "Curso de Alemão" ;
+     :id_curso "cr1" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#cr2
+:cr2 rdf:type owl:NamedIndividual ,
+              :Curso ;
+     :curso "Curso de Biotecnologia" ;
+     :id_curso "cr2" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#est1
+:est1 rdf:type owl:NamedIndividual ,
+               :Estudante ;
+      :aprende :ling4 ;
+      :conhece :est2 ,
+               :est3 ,
+               :est4 ;
+      :estudaNa :uni1 ;
+      :fluente :ling1 ,
+               :ling2 ,
+               :ling3 ;
+      :inscritoEm :cr1 ;
+      :id_pessoa "est1" ;
+      :nome "Eduardo" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#est2
+:est2 rdf:type owl:NamedIndividual ,
+               :Estudante ;
+      :aprende :ling4 ;
+      :conhece :est1 ,
+               :est3 ;
+      :estudaNa :uni1 ;
+      :inscritoEm :cr1 ;
+      :id_pessoa "est2" ;
+      :nome "Carlos" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#est3
+:est3 rdf:type owl:NamedIndividual ,
+               :Estudante ;
+      :aprende :ling4 ;
+      :conhece :est1 ,
+               :est2 ;
+      :estudaNa :uni1 ;
+      :inscritoEm :cr1 ;
+      :id_pessoa "est3" ;
+      :nome "Ana" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#est4
+:est4 rdf:type owl:NamedIndividual ,
+               :Estudante ;
+      :aprende :ling1 ;
+      :conhece :est1 ,
+               :prof1 ;
+      :estudaNa :uni1 ;
+      :fluente :ling4 ;
+      :inscritoEm :cr2 ;
+      :id_pessoa "est4" ;
+      :nome "Hanna" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#ling1
+:ling1 rdf:type owl:NamedIndividual ,
+                :Lingua ;
+       :id_lingua "ling1" ;
+       :lingua "Português" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#ling2
+:ling2 rdf:type owl:NamedIndividual ,
+                :Lingua ;
+       :id_lingua "ling2" ;
+       :lingua "Espanhol" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#ling3
+:ling3 rdf:type owl:NamedIndividual ,
+                :Lingua ;
+       :id_lingua "ling3" ;
+       :lingua "Inglês" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#ling4
+:ling4 rdf:type owl:NamedIndividual ,
+                :Lingua ;
+       :id_lingua "ling4" ;
+       :lingua "Alemão" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#prof1
+:prof1 rdf:type owl:NamedIndividual ,
+                :Professor ;
+       :conhece :est4 ;
+       :ensina :ling4 ;
+       :lecionaEm :cr1 ;
+       :professorDe :est1 ,
+                    :est2 ,
+                    :est3 ;
+       :trabalhaNa :uni1 ;
+       :id_pessoa "prof1" ;
+       :nome "Ratz" .
+
+
+###  http://rpcw.di.uminho.pt/2024/linguas#uni1
+:uni1 rdf:type owl:NamedIndividual ,
+               :Universidade ;
+      :id_universidade "uni1" ;
+      :universidade "Universidade do Minho" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi

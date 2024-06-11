@@ -1,0 +1,81 @@
+Classes
+- Livro
+- Autor
+- Personagem
+- Genre
+- Language
+- BookFormat
+- Publisher
+- Awards
+
+Data Properties
+- Livro
+    - isbn 
+    - bookId
+    - title
+    - series
+    - rating
+    - description
+    - edition
+    - pages
+    - publishDate
+    - firstPublishDate
+    - numRatings
+    - ratingsByStars
+    - likedPercent
+    - setting
+    - coverImg
+    - bbeScore
+    - bbeVotes
+    - price
+
+- Autor
+    - id_autor
+    - nome_autor
+
+- Personagem
+    - id_personagem
+    - nome_personagem
+
+- Genre
+    - id_genre
+    - Genre
+
+-Language
+    - id_language
+    - language
+
+- BookFormat
+    - id_format
+    - BookFormat
+
+- Publisher
+    - id_publisher
+    - publisher
+
+- Awards
+    - id_awards
+    - awards
+
+Object Properties
+
+Autor -> Livro
+    - escreveu
+
+Personagem -> Livro
+    - pertencemA
+
+Livro -> Genre
+    - classificadoComo
+
+Livro -> Language
+    - escritoEm
+
+Livro -> BookFormat
+    - formato
+
+Livro -> Publisher
+    - publicadoPor
+
+Livro -> Awards
+    - recebeu

@@ -1,0 +1,82 @@
++-----------------------------------------------------------+
+Query 1  Quantas livros estão presentes na ontologia?
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/livros/> 
+
+SELECT (COUNT(?b) as ?nBooks) WHERE{
+    ?b a :Livro
+}
+
++-----------------------------------------------------------+
+Query 2  Quais os títulos dos livros em que um dos autores 
+            tem apelido "Austen"? (lista de títulos
+            ordenada alfabeticamente)
+
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/livros/> 
+
+SELECT ?l WHERE {
+    ?a a :Autor;
+       :id_autor ?nome;
+       :escreveu ?livros.
+
+    ?livros :title ?l.
+
+    FILTER (regex(?nome, "Austen", "i"))
+}ORDER BY ?l
+
++-----------------------------------------------------------+
+Query 3  Qual a distribuição de livros por género? 
+        (lista de géneros sem repetições e ordenada
+        alfabeticamente em que a cada género está associado 
+        o número de livros pertencente a esse género)
+
+SELECT ?gen (COUNT(?l) as ?nLivros) WHERE {
+    ?g a :Genre;
+        :id_genre ?gen
+
+    ?l :classificadoComo ?g
+} 
+GROUP BY ?gen
+ORDER BY ?gen
+
++-----------------------------------------------------------+
+Query 4 Produz uma lista de pares, nome do personagem e a 
+        lista de livros onde esse personagem aparece, 
+        ordenada alfabeticamente por nome de personagem;
+
+SELECT ?per ?livros WHERE {
+
+    ?p a :Personagem;
+        :id_personagem ?per;
+        :pertencemA ?l.
+
+    ?l :title ?livros.
+}
+
++-----------------------------------------------------------+
+
+Query 5 Qual a distribuição de livros por autor? 
+        (lista de autores sem repetições e ordenada
+        alfabeticamente em que a cada autor está associado
+        o número de livros escritos por esse autor)
+
+SELECT DISTINCT ?autor (COUNT(?l) as ?livro) WHERE {
+    ?a a :Autor;
+       :id_autor ?autor;
+       :escreveu ?l;
+}ORDER BY ?id_autor
+
++-----------------------------------------------------------+
+
+Query 6 Quais os títulos dos livros pertencentes ao género
+        "Adventure"? (lista ordenada alfabeticamente de títulos)
+
+SELECT ?livro WHERE{
+
+    ?gen a :Genre;
+        :id_genre "Adventure".
+    
+    ?l :classificadoComo ?gen;
+       :title ?livro.
+} ORDER BY ?livro
